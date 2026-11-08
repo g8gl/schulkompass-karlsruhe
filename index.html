@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3eb">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Explore Gymnasiums in Karlsruhe, discover what you love learning, and plan school open-day visits together.">
+  <title>Schulkompass Karlsruhe | Find your next school adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Schulkompass Karlsruhe home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>schulkompass<span class="brand-city">karlsruhe</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#discover" data-i18n="navDiscover">Discover</a>
+      <a href="#shortlist"><span data-i18n="navShortlist">My shortlist</span><span class="nav-count" id="navCount">0</span></a>
+      <a href="#visit" data-i18n="navVisit">Visit planner</a>
+      <a id="mapNavLink" href="#school-map" data-i18n="navMap">Map</a>
+    </nav>
+    <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language">DE</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="discover" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sun-mark" aria-hidden="true">✳</span><span data-i18n="heroEyebrow">A little curiosity goes a long way</span></p>
+        <h1 id="heroTitle" data-i18n="heroTitle">Where could you <em>grow</em> next?</h1>
+        <p class="hero-lede" data-i18n="heroLede">Let’s explore Karlsruhe Gymnasiums together. Start with the things you love, then find a few schools to visit.</p>
+        <a class="primary-link" href="#compass"><span data-i18n="startExploring">Start exploring</span><span aria-hidden="true">↓</span></a>
+        <div class="hero-note"><span class="note-dot"></span><span data-i18n="heroNote">Made for curious kids and the grown-ups helping them choose.</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85" alt="Students learning together in a bright classroom">
+        <div class="image-caption"><span class="caption-star" aria-hidden="true">✳</span><span data-i18n="imageCaption">Big questions start small.</span></div>
+        <div class="hero-sticker" aria-hidden="true"><span>your</span><strong>next<br>chapter</strong></div>
+      </div>
+    </section>
+
+    <section class="explorer section-wrap" id="compass" aria-labelledby="compassTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow section-kicker"><span>01</span><span data-i18n="stepOne">Your curiosity compass</span></p>
+          <h2 id="compassTitle" data-i18n="compassTitle">What would you love to explore?</h2>
+        </div>
+        <p class="section-aside" data-i18n="compassAside">Pick as many as you like. There are no wrong answers.</p>
+      </div>
+      <div class="topic-grid" id="topicGrid" aria-label="Choose topics you are curious about"></div>
+      <div class="filter-row">
+        <div class="match-count" id="matchCount" aria-live="polite"></div>
+        <label class="district-filter"><span data-i18n="near">School area</span>
+          <select id="districtFilter" aria-label="Filter by school area">
+            <option value="all" data-i18n="allAreas">All areas</option>
+          </select>
+        </label>
+      </div>
+      <div class="school-grid" id="schoolGrid" aria-live="polite"></div>
+      <p class="source-note" data-i18n="sourceNote">Profiles are a starting point, not a ranking. Details change; use each official school link to confirm before visiting.</p>
+    </section>
+
+    <section class="map-section" id="school-map" aria-labelledby="mapTitle">
+      <div class="section-wrap">
+        <div class="section-heading map-heading">
+          <div>
+            <p class="eyebrow section-kicker"><span>02</span><span data-i18n="mapKicker">School locations</span></p>
+            <h2 id="mapTitle" data-i18n="mapTitle">Find schools &amp; plan a public-transport trip</h2>
+          </div>
+          <a class="map-kvv-link" href="https://www.kvv.de/fahrplan/fahrplanauskunft.html" target="_blank" rel="noreferrer"><span data-i18n="mapKvvLink">KVV journey planner ↗</span></a>
+        </div>
+        <div class="map-layout">
+          <div id="schoolMap" class="school-map" role="application" aria-label="Map of Karlsruhe Gymnasiums"></div>
+          <aside class="map-sidebar" aria-label="School locations">
+            <div class="map-list-heading"><h3 data-i18n="mapListTitle">Schools</h3><span id="mapSchoolCount"></span></div>
+            <div class="map-school-list" id="mapSchoolList"></div>
+          </aside>
+        </div>
+        <p class="map-tile-status" id="mapTileStatus" role="status" hidden></p>
+        <p class="map-transit-note"><span data-i18n="mapTransitNote">For current stops, routes and times, check the KVV journey planner.</span> <a href="https://www.kvv.de/fahrplan/fahrplanauskunft.html" target="_blank" rel="noreferrer" data-i18n="mapKvvLink">KVV journey planner ↗</a> <a href="https://www.openstreetmap.org/fixthemap" target="_blank" rel="noreferrer" data-i18n="mapReportIssue">Report a map issue ↗</a></p>
+      </div>
+    </section>
+
+    <section class="shortlist-section" id="shortlist" aria-labelledby="shortlistTitle">
+      <div class="section-wrap">
+        <div class="section-heading shortlist-heading">
+          <div>
+            <p class="eyebrow section-kicker"><span>03</span><span data-i18n="stepTwo">Your shortlist</span></p>
+            <h2 id="shortlistTitle" data-i18n="shortlistTitle">Schools worth a closer look</h2>
+          </div>
+          <button class="text-action" id="printButton" type="button"><span aria-hidden="true">⎙</span><span data-i18n="print">Print my list</span></button>
+        </div>
+        <div class="shortlist-content" id="shortlistContent"></div>
+      </div>
+    </section>
+
+    <section class="visit-section section-wrap" id="visit" aria-labelledby="visitTitle">
+      <div class="visit-intro">
+        <p class="eyebrow section-kicker"><span>04</span><span data-i18n="stepThree">Open-day notebook</span></p>
+        <h2 id="visitTitle" data-i18n="visitTitle">Go curious. Come back with clues.</h2>
+        <p data-i18n="visitIntro">Open days are a chance to notice how a place feels. Save a school, jot down a question, and compare what matters to you.</p>
+        <div class="visit-prompt">
+          <span class="prompt-spark" aria-hidden="true">✳</span>
+          <p data-i18n="promptText">Imagine a brilliant school day. What would you be learning, making, or trying?</p>
+        </div>
+      </div>
+      <div class="notebook" id="notebook">
+        <div class="notebook-top"><span class="notebook-label" data-i18n="myNotes">MY NOTES</span><span class="notebook-lines" aria-hidden="true">•••</span></div>
+        <label for="reflection" data-i18n="reflectionLabel">My future-learning ideas</label>
+        <textarea id="reflection" rows="4" maxlength="600" placeholder="I’d love to learn more about…"></textarea>
+        <div class="save-status" id="saveStatus" aria-live="polite"></div>
+        <div class="question-bank">
+          <h3 data-i18n="questionsTitle">Good questions to take along</h3>
+          <ul id="questionList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-brand">schulkompass <span>karlsruhe</span></div>
+      <p data-i18n="footerSources">School information checked 8 November 2026. Open-day dates and some details are still to be confirmed for 2027/28.</p>
+      <a href="https://www.karlsruhe.de/bildung-soziales/liste-schulen" target="_blank" rel="noreferrer" data-i18n="citySchoolList">City school directory ↗</a>
+    </footer>
+  </main>
+</body>
+</html>
