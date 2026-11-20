@@ -17,7 +17,7 @@ const translations = {
     visitIntro: 'Open days are a chance to notice how a place feels. Save a school, jot down a question, and compare what matters to you.',
     promptText: 'Imagine a brilliant school day. What would you be learning, making, or trying?', myNotes: 'MY NOTES',
     reflectionLabel: 'My future-learning ideas', reflectionPlaceholder: 'I’d love to learn more about…',
-    questionsTitle: 'Good questions to take along', footerSources: 'School information checked 8 November 2026. Open-day dates and some details are still to be confirmed for 2027/28.',
+    questionsTitle: 'Good questions to take along', footerSources: 'School information checked 20 November 2026. Some 2027/28 visiting-day dates are still to be confirmed.',
     citySchoolList: 'City school directory ↗', save: 'Save school', saved: 'Saved', map: 'Map', officialSite: 'Official school site ↗', aiInfo: 'AI initiative details ↗',
     details: 'Explore details', hideDetails: 'Hide details', visitDate: 'Open day', dateTba: '2027/28 date to be announced · check school site',
     years: 'Program length', specialties: 'Special offerings', profile: 'School profile', furtherReading: 'Further reading', lunch: 'Lunch & afternoon',
@@ -61,7 +61,7 @@ const translations = {
     visitIntro: 'Am Tag der offenen Tür kannst du spüren, wie sich eine Schule anfühlt. Speichere Schulen, notiere Fragen und vergleiche, was dir wichtig ist.',
     promptText: 'Stell dir einen tollen Schultag vor. Was würdest du lernen, machen oder ausprobieren?', myNotes: 'MEINE NOTIZEN',
     reflectionLabel: 'Meine Ideen fürs Lernen', reflectionPlaceholder: 'Ich möchte mehr über … lernen',
-    questionsTitle: 'Gute Fragen zum Mitnehmen', footerSources: 'Schulangaben geprüft am 8. November 2026. Termine für Tage der offenen Tür und einige Details für 2027/28 sind noch nicht bestätigt.',
+    questionsTitle: 'Gute Fragen zum Mitnehmen', footerSources: 'Schulangaben geprüft am 20. November 2026. Einige Besuchstermine für 2027/28 stehen noch aus.',
     citySchoolList: 'Schulverzeichnis der Stadt ↗', save: 'Schule merken', saved: 'Gemerkt', map: 'Karte', officialSite: 'Offizielle Schulwebsite ↗', aiInfo: 'Infos zur Zukunftsschule KI ↗',
     details: 'Mehr erfahren', hideDetails: 'Details ausblenden', visitDate: 'Tag der offenen Tür', dateTba: 'Termin 2027/28 noch offen · Schulwebsite prüfen',
     years: 'Dauer', specialties: 'Besondere Angebote', profile: 'Schulprofil', furtherReading: 'Weiterlesen', lunch: 'Mittagessen & Betreuung',
@@ -123,7 +123,7 @@ const schools = [
     ],
     lunchEn: 'School cafeteria ordering system is available; confirm supervision hours.', lunchDe: 'Ein Bestellsystem für die Mensa ist vorhanden; Betreuungszeiten erfragen.',
     mensaUrl: 'https://fichte-gymnasium-ka.inetmenue.de/',
-    eventEn: 'Check the school’s 2027/28 information PDF for the confirmed date.', eventDe: 'Den bestätigten Termin im Infoblatt 2027/28 der Schule nachsehen.', eventUrl: 'https://www.fichte-gymnasium.de/images/service/tdot/2027/InfoSextaneranmeldung_2027_2028.pdf',
+    eventEn: 'Saturday, 27 February 2027 · 10:30–14:00 · information sessions at 10:15, 11:30 and 12:45', eventDe: 'Samstag, 27. Februar 2027 · 10:30–14:00 Uhr · Informationsveranstaltungen um 10:15, 11:30 und 12:45 Uhr', eventUrl: 'https://www.fichte-gymnasium.de/images/service/tdot/2027/InfoSextaneranmeldung_2027_2028.pdf',
     abiEn: 'Abibac option: German Abitur plus French baccalauréat. Ask about language requirements.', abiDe: 'Abibac: deutsches Abitur plus französisches Baccalauréat. Sprachvoraussetzungen erfragen.',
     topics: ['languages', 'science', 'community']
   },
@@ -144,7 +144,7 @@ const schools = [
     ],
     lunchEn: 'School cafeteria with an online meal-ordering system.', lunchDe: 'Mensa mit Online-Bestellsystem für das Mittagessen.',
     mensaUrl: 'https://goethe-gymnasium-ka.inetmenue.de/',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.goethe-gymnasium-karlsruhe.de/',
+    eventUrl: 'https://www.goethe-gymnasium-karlsruhe.de/',
     abiEn: 'General Abitur; ask about advanced courses and the options available to your year group.', abiDe: 'Allgemeine Hochschulreife; Leistungsfächer und Angebote für deinen Jahrgang erfragen.',
     topics: ['science', 'languages', 'arts', 'community']
   },
@@ -164,7 +164,7 @@ const schools = [
     ],
     lunchEn: 'Mensa menu is published online; ask about afternoon care.', lunchDe: 'Der Mensaplan ist online; Nachmittagsbetreuung erfragen.',
     mensaUrl: 'https://schulzentrum-neureut-ka.inetmenue.de/fs/menu/week',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.gymneureut.de/service/termine',
+    eventUrl: 'https://www.gymneureut.de/service/termine',
     abiEn: 'General Abitur; the school’s profiles shape learning, not a separate Abitur certificate.', abiDe: 'Allgemeine Hochschulreife; Profile prägen das Lernen, sind aber kein eigenes Abitur.',
     topics: ['science', 'languages', 'sport']
   },
@@ -183,7 +183,7 @@ const schools = [
       { url: 'https://www.helmholtz-karlsruhe.de/unterricht/profile/das-sprachliche-profil/', titleEn: 'Language profile', titleDe: 'Sprachliches Profil' }
     ],
     lunchEn: 'Ask the school about cafeteria and afternoon arrangements.', lunchDe: 'Mensa und Nachmittagsangebote bei der Schule erfragen.',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.helmholtz-karlsruhe.de/',
+    eventUrl: 'https://www.helmholtz-karlsruhe.de/termine/',
     abiEn: 'General Abitur; ask how music training and profile choices fit together.', abiDe: 'Allgemeine Hochschulreife; erfragen, wie Musikförderung und Profilwahl zusammenpassen.',
     topics: ['music', 'science', 'languages']
   },
@@ -202,7 +202,7 @@ const schools = [
       { url: 'https://www.humboldt-ka.de/index.php/aktiv/mittagessen/', titleEn: 'Lunch', titleDe: 'Mittagessen' }
     ],
     lunchEn: 'Ask about cafeteria hours and afternoon care.', lunchDe: 'Öffnungszeiten der Mensa und Nachmittagsbetreuung erfragen.',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.humboldt-ka.de/',
+    eventEn: 'Tuesday, 2 March 2027 · 18:30 · students’ tour and information evening for parents', eventDe: 'Dienstag, 2. März 2027 · 18:30 Uhr · Rundgang für Kinder und Informationsabend für Eltern', eventLabelEn: 'Information evening', eventLabelDe: 'Informationsabend', eventUrl: 'https://www.humboldt-ka.de/index.php/informationsabend-fuer-eltern-und-grundschulkinder-der-4-klassen/',
     abiEn: 'General Abitur; profiles are subject pathways, not separate Abitur certificates.', abiDe: 'Allgemeine Hochschulreife; Profile sind fachliche Wege, kein eigenes Abitur.',
     topics: ['science', 'languages', 'community']
   },
@@ -221,7 +221,7 @@ const schools = [
       { url: 'https://www.kantgymnasium.de/seiten/schulkonzept/sozialcurriculum/index.html', titleEn: 'Social curriculum', titleDe: 'Sozialcurriculum' }
     ],
     lunchEn: 'School cafeteria service is listed on the school website.', lunchDe: 'Ein Mensaangebot ist auf der Schulwebsite aufgeführt.',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.kantgymnasium.de/',
+    eventUrl: 'https://www.kantgymnasium.de/',
     abiEn: 'General Abitur; ask which advanced courses will run for your year group.', abiDe: 'Allgemeine Hochschulreife; erfragen, welche Leistungsfächer für deinen Jahrgang angeboten werden.',
     topics: ['languages', 'science', 'arts']
   },
@@ -241,7 +241,7 @@ const schools = [
     ],
     lunchEn: 'A cafeteria meal plan is linked from the school website.', lunchDe: 'Der Mensaplan ist auf der Schulwebsite verlinkt.',
     mensaUrl: 'https://lessing-gymnasium-ka.inetmenue.de/',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://lessing-gymnasium-karlsruhe.de/cm3/index.php/hilfe-rat/anmeldung',
+    eventUrl: 'https://lessing-gymnasium-karlsruhe.de/cm3/index.php/hilfe-rat/anmeldung',
     abiEn: 'General Abitur; ask about upper-school subject choices and arts activities.', abiDe: 'Allgemeine Hochschulreife; Kurswahl in der Oberstufe und Kreativangebote erfragen.',
     topics: ['arts', 'languages', 'community']
   },
@@ -260,7 +260,7 @@ const schools = [
       { url: 'https://mgg-karlsruhe.de/unsere-schule/', titleEn: 'About the school', titleDe: 'Unsere Schule' }
     ],
     lunchEn: 'Lunch is available at the nearby children and youth centre; ask about supervision.', lunchDe: 'Mittagessen im nahegelegenen Kinder- und Jugendhaus; Betreuung erfragen.',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://mgg-karlsruhe.de/veranstaltungen/',
+    eventUrl: 'https://mgg-karlsruhe.de/veranstaltungen/',
     abiEn: 'General Abitur; ask which advanced courses and clubs are available.', abiDe: 'Allgemeine Hochschulreife; Leistungsfächer und AGs erfragen.',
     topics: ['arts', 'community', 'languages', 'science']
   },
@@ -280,7 +280,7 @@ const schools = [
     ],
     lunchEn: 'Online meal ordering and midday supervision are listed by the school.', lunchDe: 'Online-Essensbestellung und Mittagsbetreuung sind auf der Schulwebsite aufgeführt.',
     mensaUrl: 'https://max-planck-gymnasium-ka.inetmenue.de/sf/',
-    eventEn: '2027/28 date not confirmed yet.', eventDe: 'Termin für 2027/28 noch nicht bestätigt.', eventUrl: 'https://www.mpg-ka.de/',
+    eventUrl: 'https://www.mpg-ka.de/',
     abiEn: 'General Abitur; ask which advanced courses and subject combinations are available.', abiDe: 'Allgemeine Hochschulreife; Leistungsfächer und Fächerkombinationen erfragen.',
     topics: ['science', 'arts', 'community']
   }
@@ -420,6 +420,13 @@ function getMatches() {
     });
 }
 
+function eventHtml(school) {
+  const eventText = school[language === 'en' ? 'eventEn' : 'eventDe'] || text('dateTba');
+  const eventLabel = school[language === 'en' ? 'eventLabelEn' : 'eventLabelDe'] || text('visitDate');
+  const eventUrl = school.eventUrl || school.url;
+  return `<strong>${escapeHtml(eventLabel)}:</strong> <a href="${escapeHtml(eventUrl)}" target="_blank" rel="noreferrer">${escapeHtml(eventText)}</a>`;
+}
+
 function createCard(school, index) {
   const isSaved = savedIds.has(school.id);
   const tags = school[language === 'en' ? 'tagsEn' : 'tagsDe'];
@@ -429,12 +436,7 @@ function createCard(school, index) {
   const profile = school[language === 'en' ? 'profileEn' : 'profileDe'];
   const furtherReading = school.reading.map((item) => `
           <a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item[language === 'en' ? 'titleEn' : 'titleDe'])} ↗</a>`).join(' · ');
-  const eventText = school.id === 'bismarck'
-    ? school[language === 'en' ? 'eventEn' : 'eventDe']
-    : school.id === 'fichte'
-      ? school[language === 'en' ? 'eventEn' : 'eventDe']
-      : text('dateTba');
-  const announced = school.id === 'bismarck';
+  const announced = Boolean(school.eventEn);
   const mapQuery = encodeURIComponent(`${school.name}, Karlsruhe`);
   const tagsHtml = tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
   return `<article class="school-card" style="animation-delay:${Math.min(index * 45, 270)}ms">
@@ -444,7 +446,7 @@ function createCard(school, index) {
     <h3 class="school-name">${escapeHtml(school.name)}</h3>
     <p class="school-subtitle">${escapeHtml(highlights)}</p>
     <div class="tag-list">${tagsHtml}</div>
-    <div class="open-day ${announced ? 'announced' : ''}"><span class="calendar-icon" aria-hidden="true">▦</span><span><strong>${escapeHtml(text('visitDate'))}:</strong> ${escapeHtml(eventText)}</span></div>
+    <div class="open-day ${announced ? 'announced' : ''}"><span class="calendar-icon" aria-hidden="true">▦</span><span>${eventHtml(school)}</span></div>
     <div class="card-links"><a href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noreferrer">${escapeHtml(text('map'))} ↗</a><a href="${escapeHtml(school.url)}" target="_blank" rel="noreferrer">${escapeHtml(text('officialSite'))}</a>${school.aiUrl ? `<a href="${escapeHtml(school.aiUrl)}" target="_blank" rel="noreferrer">${escapeHtml(text('aiInfo'))}</a>` : ''}</div>
     <details class="school-details"><summary>${escapeHtml(text('details'))}</summary>
       <div class="details-content">
@@ -482,7 +484,7 @@ function renderShortlist() {
   byId('shortlistContent').innerHTML = selected.map((school) => `<article class="shortlist-item">
     <div class="shortlist-item-head"><div><h3>${escapeHtml(school.name)}</h3><p>${escapeHtml(school[language === 'en' ? 'areaEn' : 'areaDe'])}</p></div>
     <button class="remove-school" type="button" data-remove="${school.id}">${language === 'en' ? 'Remove' : 'Entfernen'}</button></div>
-    <p class="shortlist-event"><strong>${escapeHtml(text('visitDate'))}:</strong> ${escapeHtml(school.id === 'bismarck' ? school[language === 'en' ? 'eventEn' : 'eventDe'] : text('dateTba'))}</p>
+    <p class="shortlist-event">${eventHtml(school)}</p>
   </article>`).join('');
   byId('shortlistContent').querySelectorAll('[data-remove]').forEach((button) => button.addEventListener('click', () => toggleSaved(button.dataset.remove)));
 }
