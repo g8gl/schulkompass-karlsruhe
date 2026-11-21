@@ -90,6 +90,8 @@ h2 { margin: 0; font-family: var(--serif); font-size: clamp(30px, 3.2vw, 43px); 
 .tag:nth-child(3n+2) { background: #fbecd2; color: #80621d; }
 .open-day { display: flex; align-items: center; gap: 9px; padding: 10px 11px; background: #f6f3eb; border-left: 3px solid var(--yellow); font-size: 11px; }
 .open-day.announced { background: #fae7df; border-color: var(--coral); }
+.open-day a, .shortlist-event a { color: var(--teal); text-underline-offset: 2px; }
+.open-day a:hover, .shortlist-event a:hover { color: var(--teal-dark); }
 .calendar-icon { font-size: 16px; }
 .card-links { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 14px; }
 .card-links a, .details-toggle { color: var(--teal); font-size: 11px; font-weight: 700; text-decoration: none; }
